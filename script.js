@@ -65,9 +65,23 @@ function tweetQuote(){
     window.open(twitterUrl,'_blank');
 }
 
+  // Function to open WhatsApp with a quote
+  function openWhatsAppWithQuote() {
+    // Replace 'your_quote' with the quote you want to send
+    var quote =quoteText.textContent +' - '+ quoteAuthor.textContent;
+
+    // Construct the WhatsApp deep link without specifying the phone number
+    var whatsappLink = "https://wa.me/?text=" + encodeURIComponent(quote);
+
+    // Open the WhatsApp deep link in a new tab or window
+    window.open(whatsappLink);
+  }
+
+
+
 //Event Listeners
 newQuoteBtn.addEventListener('click',getQuotes);
-twitterBtn.addEventListener('click', tweetQuote);
+twitterBtn.addEventListener('click', openWhatsAppWithQuote);
 
 //On Load
 getQuotes();
